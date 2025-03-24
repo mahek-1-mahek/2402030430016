@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Now</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 90%;
+            max-width: 600px;
+            background-color: #444;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            text-align: left;
+            font-size: 18px;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+        }
+        textarea {
+            height: 100px;
+            resize: none;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        .button {
+            background-color: white;
+            color: black;
+            padding: 10px 20px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: #ddd;
+        }
+        .return-home {
+            display: inline-block;
+            background-color: black;
+            color: white;
+            padding: 10px 15px;
+            font-size: 14px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-bottom: 20px;
+        }
+        .return-home:hover {
+            background-color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="return-home">Return to Home Page</a>
+        <h2>Contact Now</h2>
+        <form id="contactForm">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your Mail" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" placeholder="Your Message.." required></textarea>
+            
+            <div class="button-container">
+                <button type="submit" class="button">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let email = document.getElementById("email").value;
+            let message = document.getElementById("message").value;
+
+            if (email && message) {
+                alert("Thank you for your message!");
+                document.getElementById("contactForm").reset();
+            } else {
+                alert("Please fill in all fields.");
+            }
+        });
+    </script>
+</body>
+</html>
